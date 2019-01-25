@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+main {
+  flex: 1;
+  margin: 2em 0;
+}
+
+.hero {
+  background-size: cover;
+  background-position: top center;
+  min-height: 90vh;
+}
+
+.jumbotron--hero {
+  opacity: .8;
+}
+
+.google-maps {
+  position: relative;
+  padding-bottom: 40%; // This is the aspect ratio
+  height: 0;
+  overflow: hidden;
+}
+.google-maps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+.logo {
+  max-width: 70%;
+}
+
+.messages {
+  position: absolute;
+  left: 50%;
+  max-width: 90%;
+  top: 3em;
+  transform: translateX(-50%);
+  width: 30em;
+  z-index: 100;
+}
+
+

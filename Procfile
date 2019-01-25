@@ -1,0 +1,1 @@
+web: gunicorn hacknc.wsgi --log-file -

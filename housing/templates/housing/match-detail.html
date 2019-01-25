@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>{{match.team}}'s itinerary:</h3>
+
+<p>Arriving on {{match.team.arrival_time}} with {{match.team.player_count}} players.</p>
+
+{%for host in match.hosts.all%}
+
+<div class="row mb-2">
+<div class="col">
+
+<div class="card"><div class="card-body">
+
+<div class="row d-flex align-items-center">
+<div class="col-sm-4">
+<div class="card-title"><h4>{{host.name}} residence</h4></div>
+<h6>Contact Info:</h6>
+<ul>
+	<li>{{host.address}}</li>
+	<li>{{host.get_pretty_phone_number}}</li>
+	<li>{{host.email}}</li>
+</ul>	
+</div>
+<div class="col-sm-8">
+	<div class="google-maps"><iframe width="500" height="200"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyD9DlzWco-IDu97eFELfA_lwZn17c0Qwnk&origin={{host.address|urlencode}}&destination={{match.team.tournament.location|urlencode}}" allowfullscreen>
+        </iframe></div>
+</div>
+</div>
+
+
+
+</div>
+<div class="card-footer text-muted">
+{%if host.guests_max%}Preferably would host {{host.guests_preferred}} team members. Can accomodate a max of {{host.guests_max}} team members.{% else%} Can accomodate {{host.guests_preferred}} team members.{% endif %}</div>
+</div>
+</div>
+</div>
+{% endfor %}
+
+
+{% endblock %}
