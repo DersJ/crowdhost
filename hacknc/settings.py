@@ -29,7 +29,7 @@ DEBUG = config('DEBUG', cast=bool)
 SECRET_KEY = config('SECRET_KEY')
 
 
-ALLOWED_HOSTS = ['crowdhost.herokuapp.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['crowdhost.herokuapp.com', 'localhost', '127.0.0.1', 'crowdhost.us', 'www.crowdhost.us']
 
 
 # Application definition
