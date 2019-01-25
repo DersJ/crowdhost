@@ -29,11 +29,7 @@ DEBUG = config('DEBUG', cast=bool)
 SECRET_KEY = config('SECRET_KEY')
 
 
-host_list = os.environ.get('DJANGO_ALLOWED_HOSTS', '')
-if host_list:
-    ALLOWED_HOSTS = host_list.split(',')
-else:
-    ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['crowdhost.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
